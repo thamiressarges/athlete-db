@@ -4,6 +4,10 @@ from models.jogador import Jogador
 
 router = APIRouter()
 
-@router.get("/")
+@router.get('/')
 async def inicio():
     return "Bem vindo ao Athlete DB"
+
+@router.get('/jogadores')
+async def lista_jogadores():
+    return connection.local.jogador.find()
