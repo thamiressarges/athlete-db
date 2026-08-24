@@ -1,7 +1,6 @@
 from fastapi import FastAPI
+from routes.jogador import router
 
 app = FastAPI()
 
-@app.get("/")
-def inicio():
-    return {"Mensagem":"Iniciando com FARM Stack"}
+app.include_router(router)
